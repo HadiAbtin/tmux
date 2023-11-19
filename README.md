@@ -7,7 +7,7 @@ apt-get install -y tmux
 ### Add bash completion into server
 ``` bash
 apt-get install bash-completion -y
-cat << EOF > /etc/bash_completion.d/tmux >>
+cat << EOF > /etc/bash_completion.d/tmux
 #!/usr/bin/env bash
 
 # Copy of https://github.com/Bash-it/bash-it/blob/master/completion/available/tmux.completion.bash
