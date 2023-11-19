@@ -1,4 +1,4 @@
 # tmux
-``` bash
+``` yml
 sleep 1000
 ```
