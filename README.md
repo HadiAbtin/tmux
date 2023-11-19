@@ -194,3 +194,8 @@ complete -F _tmux tmux
 
 # END tmux completion
 ```
+
+### Create Session with name `redis-check`
+``` bash
+tmux new -s redis-check
+```
