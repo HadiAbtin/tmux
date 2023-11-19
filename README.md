@@ -1,14 +1,14 @@
 # tmux EASY manual
-### Install tmux on ubuntu
+### install tmux on ubuntu
 ``` bash
 apt-get install -y tmux
 ```
 
-### Add bash completion into server
+### add bash completion into server
 ``` bash
 apt-get install bash-completion -y
 ```
-#### Add this code to /etc/bash_completion.d/tmux
+#### add this code to /etc/bash_completion.d/tmux
 ``` bash
 #!/usr/bin/env bash
 
@@ -195,15 +195,79 @@ complete -F _tmux tmux
 # END tmux completion
 ```
 
-### Create Session with name `redis`
+### create session with name `redis`
 ``` bash
 tmux new -s redis
 ```
 
-**NOTE:** The tmux management commands follow this format: you first press `Ctrl + b`, then release it, and press another management key afterward
-### Create Window in Session
+**NOTE:** The tmux management commands follow this format: you first press `Ctrl + b` as prefix, then release it, and press another management key afterward
+### create window in session
 ``` bash
 (ctrl + b) + c
 ```
-It displays all the windows of the session on the bottom left
+It displays all the windows of the session on the bottom left. The asterisk (*) in front of the window name indicates that we are currently active on that window.
+
 <img width="748" alt="Screen Shot 1402-08-28 at 15 44 23" src="https://github.com/HadiAbtin/tmux/assets/151436034/3856479a-a242-4e88-9c5c-9ac6863ae26b">
+
+### toggle between windows
+
+``` bash
+(ctrl + b) + <windows_number>
+```
+
+### set name for window
+``` bash
+(ctrl + b) + ,
+# and now set the window name
+```
+
+### split window horizontally
+``` bash
+(ctrl + b) + "
+```
+
+### split window vertically
+``` bash
+(ctrl + b) + %
+```
+
+### terminate a window
+``` bash
+exit (or) ctrl + d
+```
+### sync all windows (panes) // type command on all panes concurrently 
+``` bash
+(ctrl + b) + :
+
+# and then write "setw synchronize-panes"
+```
+
+### disable syncronize panes
+``` bash
+(ctrl + b) + :
+
+# and then write "setw synchronize-panes"
+```
+
+### toggle between panes
+``` bash
+(ctrl + b) + ↑ or ↓ or → or ←
+```
+
+### detach from session
+``` bash
+(ctrl + b) + d
+```
+
+### other commands
+``` bash
+tmux ls                                                              # lists all sessions on server
+tmux attach -t <session_name or session_id>                          # attach to specifc session
+tmux rename-session -t <session_name or session_id> <session_name>   # rename session
+tmux kill-session -t redis                                           # kill (delete) session redis
+```
+
+### run script on tmux session (useful for crontab jobs)
+``` bash
+tmux new -s redis -d "/opt/redis/redis-start.sh"
+```
