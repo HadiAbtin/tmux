@@ -200,7 +200,7 @@ complete -F _tmux tmux
 tmux new -s redis-check
 ```
 
-#### **NOTE:** The tmux management commands follow this format: you first press `Ctrl + b`, then release it, and press another management key afterward
+**NOTE:** The tmux management commands follow this format: you first press `Ctrl + b`, then release it, and press another management key afterward
 ### Create Window in Session
 ``` bash
 (ctrl + b) + c
