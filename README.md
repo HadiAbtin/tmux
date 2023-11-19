@@ -1,4 +1,4 @@
-# tmux
+# tmux EASY manual
 ### Install tmux on ubuntu
 ``` bash
 apt-get install -y tmux
@@ -195,9 +195,9 @@ complete -F _tmux tmux
 # END tmux completion
 ```
 
-### Create Session with name `redis-check`
+### Create Session with name `redis`
 ``` bash
-tmux new -s redis-check
+tmux new -s redis
 ```
 
 **NOTE:** The tmux management commands follow this format: you first press `Ctrl + b`, then release it, and press another management key afterward
@@ -205,3 +205,5 @@ tmux new -s redis-check
 ``` bash
 (ctrl + b) + c
 ```
+It displays all the windows of the session on the bottom left
+<img width="748" alt="Screen Shot 1402-08-28 at 15 44 23" src="https://github.com/HadiAbtin/tmux/assets/151436034/3856479a-a242-4e88-9c5c-9ac6863ae26b">
