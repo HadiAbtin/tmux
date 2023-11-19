@@ -267,6 +267,17 @@ tmux rename-session -t <session_name or session_id> <session_name>   # rename se
 tmux kill-session -t redis                                           # kill (delete) session redis
 ```
 
+### balance panes horizontally 
+``` bash
+(ctrl + b) + :
+# and then write "select-layout even-horizontal"
+```
+
+### balance panes vertically
+``` bash
+(ctrl + b) + :
+# and then write "select-layout even-vertical"
+```
 ### run script on tmux session (useful for crontab jobs)
 ``` bash
 tmux new -s redis -d "/opt/redis/redis-start.sh"
